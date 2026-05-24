@@ -2,29 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>InfoVis - Assignment 3 - Task 3</title>
+    <title>InfoVis - Assignment 3</title>
+    <!-- Loading D3.js version 7.8.4 -->
     <script src="libs/d3-7.8.4.min.js"></script>
+    <!-- Loading Bootstrap CSS -->
     <link rel="stylesheet" href="libs/bootstrap-5.3.0-alpha3.min.css">
+    <!-- Loading CSS styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- YOUR SOLUTION GOES HERE -->
-    <h2>Task 3 — Linked Brushing (PCP ↔ SPLOM)</h2>
-    <div id="info">Brush any axis in PCP to highlight matching players in SPLOM, and vice versa.</div>
+    <h2>Task 1 — Vertical Parallel Coordinates Plot</h2>
+    <div id="info">Drag on any axis to filter players. Brush multiple axes to intersect selections.</div>
+    <div id="pcp-container"></div>
 
-    <div class="row g-0">
-        <div class="col-6">
-            <div class="panel-title">Parallel Coordinates Plot</div>
-            <div id="pcp-container"></div>
-        </div>
-        <div class="col-6">
-            <div class="panel-title">Scatterplot Matrix</div>
-            <div id="splom-container"></div>
-        </div>
-    </div>
-
+    <!-- Loading Bootstrap js -->
     <script src="libs/bootstrap-5.3.0-alpha3.bundle.min.js"></script>
+    <!-- Loading main javascript file -->
     <script src="main.js"></script>
 
 </body>

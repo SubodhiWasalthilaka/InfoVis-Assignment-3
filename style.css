@@ -1,21 +1,19 @@
-﻿/* ════════════════════════════════════════════
-   Task 3 — Linked Brushing
+﻿/* ════════════════════════════════════════════════════════════════
+   Task 1 — Vertical Parallel Coordinates Plot
    style.css
-════════════════════════════════════════════ */
+════════════════════════════════════════════════════════════════ */
 
-* {
-    box-sizing: border-box;
+/* ── Page ────────────────────────────────────────────────────── */
+body {
     margin: 0;
     padding: 0;
-}
-
-body {
     background: #f5f7fa;
     font-family: sans-serif;
     font-size: 13px;
 }
 
 h2 {
+    margin: 0;
     padding: 14px 20px;
     background: #1a2035;
     color: #ffffff;
@@ -31,33 +29,12 @@ h2 {
     color: #555;
 }
 
-/* ── Two panel layout ── */
-.row {
-    display: flex;
+#pcp-container {
+    padding: 10px 20px;
+    overflow-x: auto;
 }
 
-.col-6 {
-    width: 50%;
-    border-right: 1px solid #dde2ec;
-    overflow: auto;
-}
-
-.panel-title {
-    padding: 8px 14px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #444;
-    background: #f0f3f8;
-    border-bottom: 1px solid #dde2ec;
-}
-
-#pcp-container,
-#splom-container {
-    padding: 10px;
-    overflow: auto;
-}
-
-/* ── PCP axis styles ── */
+/* ── Axis lines and ticks ────────────────────────────────────── */
 .axis line,
 .axis path {
     stroke: #bbb;
@@ -68,26 +45,40 @@ h2 {
     font-size: 9px;
 }
 
+/* Attribute name label above each vertical axis */
 .axis-label {
     font-size: 10px;
-    fill: #2c3e50;
+    fill: #222;
     text-anchor: middle;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-/* ── PCP player lines ── */
+/* ── Player polylines ────────────────────────────────────────── */
+
+/* default: all lines visible in blue */
 .pcp-line {
     fill: none;
-    stroke: #2a75d3;
-    stroke-width: 1.5px;
-    stroke-opacity: 0.4;
+    stroke: steelblue;
+    stroke-width: 1;
+    stroke-opacity: 0.3;
 }
 
-/* ── Brush handle ── */
+    /* selected by brush: highlighted in red */
+    .pcp-line.active {
+        stroke: #e74c3c;
+        stroke-opacity: 0.9;
+        stroke-width: 1.8;
+    }
+
+    /* not selected: faded out */
+    .pcp-line.inactive {
+        stroke-opacity: 0.04;
+    }
+
+/* ── Brush selection rectangle ───────────────────────────────── */
 .brush .selection {
-    fill: #34495e;
-    fill-opacity: 0.25;
-    stroke: #2c3e50;
-    stroke-width: 1px;
-    stroke-dasharray: 2,2;
+    fill: steelblue;
+    fill-opacity: 0.15;
+    stroke: steelblue;
+    stroke-width: 1;
 }
